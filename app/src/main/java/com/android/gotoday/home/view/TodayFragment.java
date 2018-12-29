@@ -7,11 +7,15 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.gotoday.R;
 import com.android.gotoday.home.adapter.TodayPagerAdapter;
+import com.android.gotoday.home.item.DiaryItem;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class TodayFragment extends BaseFragment {
 
@@ -20,8 +24,21 @@ public class TodayFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home_base, container, false);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager_home_today);
-        viewPager.setAdapter(new TodayPagerAdapter(getContext()));
+        ViewPager viewPager = view.findViewById(R.id.viewpager_home_today);
+
+        //TODO
+        List<DiaryItem> dummyDiaryItemList = new ArrayList<>();
+        Date date = new Date(System.currentTimeMillis());
+
+        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
+        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
+        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
+        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
+        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
+
+        viewPager.setAdapter(new TodayPagerAdapter(getContext(),dummyDiaryItemList));
+        viewPager.setCurrentItem(dummyDiaryItemList.size()-1);
+
         TextView textView = view.findViewById(R.id.textview_base_fragment);
         textView.setText(getText());
         return view;

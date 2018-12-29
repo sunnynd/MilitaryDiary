@@ -1,26 +1,23 @@
 package com.android.gotoday.home.item;
 
-import com.android.gotoday.R;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public enum DiaryItem {
+public class DiaryItem {
+    Date mRecordDate;
+    String mContents;
 
-    FIRST(R.layout.view_diary, "FIRST"),
-    SECOND(R.layout.view_diary, "SECOND"),
-    THIRD(R.layout.view_diary, "THIRD");
-
-    private int mLayoutResId;
-    private String mTitle;
-
-    DiaryItem(int layoutResId, String title) {
-        mLayoutResId = layoutResId;
-        mTitle = title;
+    public DiaryItem(Date recordDate, String contents) {
+        mRecordDate = recordDate;
+        mContents = contents;
     }
 
-    public int getlayoutResId() {
-        return mLayoutResId;
+    public String getRecordDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return simpleDateFormat.format(mRecordDate);
     }
 
-    public String getTitle() {
-        return mTitle;
+    public String getContents() {
+        return mContents;
     }
 }
