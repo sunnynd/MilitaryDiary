@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/framelayout_main_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/container_home_tap">
+            android:layout_height="0dp"
+            android:layout_weight="9">
         </FrameLayout>
 
         <include
             android:id="@+id/container_home_tap"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             layout="@layout/activity_home_tap" />
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 
 </layout>
