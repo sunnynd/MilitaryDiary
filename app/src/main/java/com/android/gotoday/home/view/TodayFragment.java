@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.gotoday.R;
@@ -23,7 +24,6 @@ public class TodayFragment extends BaseFragment {
         viewPager.setAdapter(new TodayPagerAdapter(getContext()));
         TextView textView = view.findViewById(R.id.textview_base_fragment);
         textView.setText(getText());
-
         return view;
     }
 

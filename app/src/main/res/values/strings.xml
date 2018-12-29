@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">병영일기</string>
+    <string name="hint_diary">일기를 써주세요.</string>
 </resources>

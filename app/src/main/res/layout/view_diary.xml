@@ -8,13 +8,20 @@
 
         <TextView
             android:id="@+id/textview_view_diary"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:text="DiaryItem"/>
 
+        <EditText
+            android:id="@+id/edittext_view_diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:hint="@string/hint_diary"
+            android:minLines="5" />
     </LinearLayout>
 
 </layout>
