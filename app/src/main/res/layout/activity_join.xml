@@ -6,24 +6,156 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <android.support.constraint.Guideline
+            android:id="@+id/guide_up"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guide_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guide_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guide_right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <TextView
+            android:id="@+id/textview_key_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            app:layout_constraintBaseline_toBaselineOf="@id/edittext_value_name"
+            app:layout_constraintBottom_toTopOf="@id/textview_key_kind"
+            app:layout_constraintLeft_toLeftOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/guide_up" />
+
+        <TextView
+            android:id="@+id/textview_key_kind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="군종류"
+            app:layout_constraintBaseline_toBaselineOf="@id/edittext_value_kind"
+            app:layout_constraintBottom_toTopOf="@id/textview_key_enter_date"
+            app:layout_constraintLeft_toLeftOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/textview_key_name" />
+
+        <TextView
+            android:id="@+id/textview_key_enter_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입대일"
+            app:layout_constraintBaseline_toBaselineOf="@id/edittext_value_enter_date"
+            app:layout_constraintBottom_toTopOf="@id/textview_key_end_date"
+            app:layout_constraintLeft_toLeftOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/textview_key_kind" />
+
+        <TextView
+            android:id="@+id/textview_key_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전역일"
+            app:layout_constraintBaseline_toBaselineOf="@id/edittext_value_end_date"
+            app:layout_constraintBottom_toTopOf="@id/textview_key_enter_date"
+            app:layout_constraintLeft_toLeftOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/textview_key_enter_date" />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="textview_key_name, textview_key_kind, textview_key_enter_date, textview_key_end_date" />
+
+        <EditText
+            android:id="@+id/edittext_value_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:text="김이병"
+            app:layout_constraintBottom_toTopOf="@id/edittext_value_kind"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintRight_toLeftOf="@id/guide_right"
+            app:layout_constraintTop_toBottomOf="@id/guide_up"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <EditText
+            android:id="@+id/edittext_value_kind"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:text="육군"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintRight_toLeftOf="@id/guide_right"
+            app:layout_constraintTop_toBottomOf="@id/edittext_value_name"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/edittext_value_enter_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical|end"
+            android:text="2019.01.02"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintRight_toLeftOf="@id/guide_right"
+            app:layout_constraintTop_toBottomOf="@id/edittext_value_kind"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/edittext_value_end_date"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical|end"
+            android:text="2020.08.07"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintRight_toLeftOf="@id/guide_right"
+            app:layout_constraintTop_toBottomOf="@id/edittext_value_enter_date"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
         <android.support.v7.widget.CardView
             android:id="@+id/cardview_join_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="6dp">
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toTopOf="@id/guide_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="NEXT"
                 android:textColor="@color/white"
-                android:textSize="30sp"
-                android:text="NEXT"/>
+                android:textSize="30sp" />
 
         </android.support.v7.widget.CardView>
+
+
     </android.support.constraint.ConstraintLayout>
 </layout>
