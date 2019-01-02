@@ -12,4 +12,8 @@ public class DiaryItem {
     public String getRecordDate() {
         return mRecordDate;
     }
+
+    public String getContents() {
+        return mContents;
+    }
 }

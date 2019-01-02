@@ -1,12 +1,14 @@
 package com.android.gotoday.home.adapter;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.gotoday.R;
@@ -29,11 +31,16 @@ public class TodayPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.view_diary, collection, false);
+
         TextView textViewDate = view.findViewById(R.id.textview_view_diary_date);
-        Log.i("TodayPagerAdapter","getRecordDate() :: " + mDiaryItemList.get(position).getRecordDate());
         textViewDate.setText(mDiaryItemList.get(position).getRecordDate());
+
+        EditText editText = view.findViewById(R.id.edittext_view_diary);
+        editText.setText(mDiaryItemList.get(position).getContents());
+
         collection.addView(view);
         return view;
     }
@@ -45,7 +52,6 @@ public class TodayPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        Log.i("TodayPagerAdapter","mDiaryItemList.size() :: " + mDiaryItemList.size());
         return mDiaryItemList.size();
     }
 
