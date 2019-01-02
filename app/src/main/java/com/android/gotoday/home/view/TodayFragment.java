@@ -26,15 +26,8 @@ public class TodayFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_home_base, container, false);
         ViewPager viewPager = view.findViewById(R.id.viewpager_home_today);
 
-        //TODO
+        //TODO getDiaryItem in DB ? or Network ?
         List<DiaryItem> dummyDiaryItemList = new ArrayList<>();
-        Date date = new Date(System.currentTimeMillis());
-
-        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
-        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
-        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
-        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
-        dummyDiaryItemList.add(new DiaryItem(date,"일기"));
 
         viewPager.setAdapter(new TodayPagerAdapter(getContext(),dummyDiaryItemList));
         viewPager.setCurrentItem(dummyDiaryItemList.size()-1);
