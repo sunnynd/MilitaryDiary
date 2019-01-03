@@ -1,4 +1,4 @@
-package com.android.gotoday.home.view;
+package com.android.gotoday.home.today;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.gotoday.R;
-import com.android.gotoday.home.adapter.TodayPagerAdapter;
+import com.android.gotoday.home.today.TodayPagerAdapter;
 import com.android.gotoday.home.item.DiaryItem;
+import com.android.gotoday.home.view.BaseFragment;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class TodayFragment extends BaseFragment {

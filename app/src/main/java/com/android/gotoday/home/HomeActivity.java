@@ -10,8 +10,8 @@ import android.view.View;
 import com.android.gotoday.R;
 import com.android.gotoday.databinding.ActivityHomeBinding;
 import com.android.gotoday.home.view.ProfileFragment;
-import com.android.gotoday.home.view.TodayFragment;
-import com.android.gotoday.home.view.TotalFragment;
+import com.android.gotoday.home.today.TodayFragment;
+import com.android.gotoday.home.total.TotalFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
