@@ -1,6 +1,9 @@
 package com.android.gotoday.common;
 
+import android.arch.persistence.room.TypeConverter;
+
 import java.util.Calendar;
+import java.util.Date;
 
 public class DateUtil {
 
@@ -15,5 +18,15 @@ public class DateUtil {
     public static String getCurrentDate () {
         Calendar calendar = Calendar.getInstance();
         return getStringDateFormat(calendar);
+    }
+
+    @TypeConverter
+    public static Date toDate(Long timestamp) {
+        return timestamp == null ? null : new Date(timestamp);
+    }
+
+    @TypeConverter
+    public static Long toTimestamp(Date date) {
+        return date == null ? null : date.getTime();
     }
 }
