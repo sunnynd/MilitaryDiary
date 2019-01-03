@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.DatePicker;
 
 import com.android.gotoday.R;
+import com.android.gotoday.common.DateUtil;
 import com.android.gotoday.databinding.ActivityJoinBinding;
 import com.android.gotoday.home.HomeActivity;
 
@@ -27,15 +28,11 @@ public class JoinActivity extends AppCompatActivity {
         mBinding.edittextValueEnterDate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
                 datePickerDialog = new DatePickerDialog(JoinActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                mBinding.edittextValueEnterDate.setText(day + "/" + (month + 1) + "/" + year);
+                                mBinding.edittextValueEnterDate.setText(DateUtil.getStringDateFormat(year, month, day));
                             }
                         }, 0, 0, 0);
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());

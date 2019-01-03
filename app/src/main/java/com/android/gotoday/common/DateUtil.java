@@ -8,6 +8,10 @@ public class DateUtil {
         return String.format("%04d-%02d-%02d", calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
     }
 
+    public static String getStringDateFormat (int year, int month, int day) {
+        return String.format("%04d-%02d-%02d", year, month + 1, day);
+    }
+
     public static String getCurrentDate () {
         Calendar calendar = Calendar.getInstance();
         return getStringDateFormat(calendar);
