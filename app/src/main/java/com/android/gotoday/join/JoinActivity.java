@@ -1,6 +1,8 @@
 package com.android.gotoday.join;
 
 import android.app.DatePickerDialog;
+import android.arch.lifecycle.LifecycleActivity;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -15,15 +17,17 @@ import com.android.gotoday.home.HomeActivity;
 
 import java.util.Calendar;
 
-public class JoinActivity extends AppCompatActivity {
+public class JoinActivity extends LifecycleActivity {
 
     ActivityJoinBinding mBinding;
     DatePickerDialog datePickerDialog;
+    private JoinActivityViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_join);
+        mViewModel = ViewModelProviders.of(this).get(JoinActivityViewModel.class);
 
         mBinding.edittextValueEnterDate.setOnClickListener(new View.OnClickListener(){
             @Override
