@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">병영일기</string>
     <string name="hint_diary">일기를 써주세요.</string>
+    <string-array name="group_type">
+        <item >서울</item>
+        <item >경기</item>
+        <item >부천</item>
+    </string-array>
 </resources>

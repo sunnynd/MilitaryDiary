@@ -19,6 +19,9 @@ public class DateUtil {
         Calendar calendar = Calendar.getInstance();
         return getStringDateFormat(calendar);
     }
+    public static Date getNormalizedUtcDateForToday () {
+        return new Date();
+    }
 
     @TypeConverter
     public static Date toDate(Long timestamp) {

@@ -18,6 +18,6 @@ public class JoinActivityViewModel extends ViewModel {
     }
 
     public void setPeriod(PeriodEntry period) {
-        mPeriod.setValue(period);
+        mPeriod.postValue(period);
     }
 }
